@@ -205,7 +205,7 @@ export default function createListComponent({
         }
         return {
           scrollDirection:
-            prevState.scrollOffset < scrollOffset ? 'forward' : 'backward',
+            prevState.scrollOffset <= scrollOffset ? 'forward' : 'backward',
           scrollOffset: scrollOffset,
           scrollUpdateWasRequested: true,
         };
@@ -560,7 +560,7 @@ export default function createListComponent({
         return {
           isScrolling: true,
           scrollDirection:
-            prevState.scrollOffset < scrollLeft ? 'forward' : 'backward',
+            prevState.scrollOffset <= scrollLeft ? 'forward' : 'backward',
           scrollOffset,
           scrollUpdateWasRequested: false,
         };
